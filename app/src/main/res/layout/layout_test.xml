@@ -1,0 +1,18 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:orientation="vertical"
+    tools:context=".TestActivity">
+
+    <akturk.contextualview.view.ContextualView
+        xmlns:cv="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/activity_test_contextualview"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@android:color/holo_blue_dark"
+        cv:text_negative="Negative"
+        cv:text_positive="Positive"/>
+
+</LinearLayout>

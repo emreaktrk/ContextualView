@@ -1,0 +1,24 @@
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <Button
+        android:id="@+id/contextualview_button_negative"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="@string/text_button_negative"
+        style="@style/Widget.AppCompat.ActionButton"/>
+
+    <Button
+        android:id="@+id/contextualview_button_positive"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="@string/text_button_positive"
+
+        style="@style/Widget.AppCompat.ActionButton"/>
+
+</merge>

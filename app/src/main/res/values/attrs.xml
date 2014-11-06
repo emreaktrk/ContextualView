@@ -1,0 +1,8 @@
+<resources>
+
+    <declare-styleable name="ContextualView">
+        <attr name="text_positive" format="string"/>
+        <attr name="text_negative" format="string"/>
+    </declare-styleable>
+
+</resources>
