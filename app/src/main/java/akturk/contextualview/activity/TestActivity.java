@@ -18,6 +18,8 @@ public class TestActivity extends Activity implements ContextualButtonClickListe
 
         ContextualView mContextualView = (ContextualView) findViewById(R.id.activity_test_contextualview);
         mContextualView.setOnContextualButtonClickListener(this);
+        mContextualView.setPositiveButtonIconResource(android.R.drawable.btn_star_big_on);
+        mContextualView.setNegativeButtonIconResource(android.R.drawable.btn_star_big_off);
     }
 
     @Override

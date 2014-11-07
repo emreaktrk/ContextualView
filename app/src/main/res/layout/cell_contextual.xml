@@ -3,13 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
     <Button
         android:id="@+id/contextualview_button_negative"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:text="@string/text_button_negative"
+        android:paddingRight="40dp"
+        android:paddingLeft="40dp"
         style="@style/Widget.AppCompat.ActionButton"/>
 
     <Button
@@ -18,7 +19,8 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:text="@string/text_button_positive"
-
+        android:paddingRight="50dp"
+        android:paddingLeft="50dp"
         style="@style/Widget.AppCompat.ActionButton"/>
 
 </merge>

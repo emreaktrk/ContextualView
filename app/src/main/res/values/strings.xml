@@ -1,7 +1,7 @@
 <resources>
 
     <string name="app_name">ContextualView</string>
-    <string name="text_button_negative">Cancel</string>
-    <string name="text_button_positive">OK</string>
+    <string name="text_button_negative">DISCARD</string>
+    <string name="text_button_positive">DONE</string>
 
 </resources>
