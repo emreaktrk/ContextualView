@@ -1,4 +1,4 @@
-package akturk.contextualview;
+package com.akturk.contextualview;
 
 import android.content.Context;
 import android.util.AttributeSet;
