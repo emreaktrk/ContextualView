@@ -2,63 +2,42 @@ package com.akturk.contextualview;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.view.View;
-import android.widget.LinearLayout;
 
-public class ContextualView extends LinearLayout implements View.OnClickListener {
-
-    private OnContextualButtonClickListener mListener;
+public class ContextualView extends ContextualLayout {
 
     public ContextualView(Context context) {
         super(context);
-
-        if (!isInEditMode())
-            init();
     }
 
     public ContextualView(Context context, AttributeSet attrs) {
         super(context, attrs);
-
-        if (!isInEditMode())
-            init();
     }
 
     public ContextualView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-
-        if (!isInEditMode())
-            init();
-    }
-
-    private void init() {
-        setOrientation(HORIZONTAL);
-        setListeners();
-    }
-
-    private void setListeners() {
-        int childCount = getChildCount();
-        for (int i = 0; i < childCount; i++) {
-            View viewChild = getChildAt(i);
-            if (viewChild instanceof ContextualButton)
-                viewChild.setOnClickListener(this);
-        }
     }
 
     @Override
-    public void onClick(View v) {
-        if (mListener == null)
-            return;
-
-        ContextualButton contextualButton = (ContextualButton) v;
-        mListener.onContextualButtonClick(contextualButton);
+    protected void init() {
+        addButtons();
+        super.init();
     }
 
-    public void setOnContextualButtonClickListener(OnContextualButtonClickListener callback) {
-        mListener = callback;
-    }
+    private void addButtons() {
+        Context context = getContext();
+        ContextualButton positiveContextualButton = new ContextualButton
+                .Builder(context)
+                .setText("Accept")
+                .setId(R.id.positive_contextual_button)
+                .build();
 
-    public static interface OnContextualButtonClickListener {
-        public void onContextualButtonClick(ContextualButton button);
-    }
+        ContextualButton negativeContextualButton = new ContextualButton
+                .Builder(context)
+                .setText("Decline")
+                .setId(R.id.negative_contextual_button)
+                .build();
 
+        addView(positiveContextualButton);
+        addView(negativeContextualButton);
+    }
 }
