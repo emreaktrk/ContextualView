@@ -23,6 +23,8 @@ Usage
 TODO
 --------------
 * Ripple effect
+* XML attributes
+* Push to maven central
 
 Contribution
 --------------
