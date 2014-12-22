@@ -4,6 +4,8 @@ This library is inspired from Chris Banes' Done Discard bar. It has material des
 
 Install
 --------------
+
+#####Gradle
 ```groovy
 repositories {
     maven { url 'http://raw.github.com/emreaktrk/ContextualView/master/repository/' }
@@ -13,8 +15,20 @@ dependencies {
     compile 'com.akturk.contextualview:release:1.1.0@aar'
 }
 ```
+
+#####Maven
+```xml
+<dependency>
+      <groupId>com.akturk.contextualview</groupId>
+      <artifactId>release</artifactId>
+      <version>1.1.0</version>
+      <type>aar</type>
+    </dependency>
+```
+
 Usage
 --------------
+
 #####ContextualView
 ```xml
 <FrameLayout
@@ -65,6 +79,7 @@ public class MainActivity extends ActionBarActivity implements OnContextualButto
     }
 }
 ```
+
 #####ContextualLayout
 ```xml
 <FrameLayout
