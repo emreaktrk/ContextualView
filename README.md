@@ -16,7 +16,7 @@ dependencies {
 
 Usage
 --------------
-* ContextualView
+#####ContextualView
 ```xml
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -66,7 +66,7 @@ public class MainActivity extends ActionBarActivity implements OnContextualButto
     }
 }
 ```
-* ContextualLayout
+#####ContextualLayout
 ```xml
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
