@@ -31,7 +31,7 @@ Usage
         android:layout_height="50dp"
         android:layout_gravity="bottom"
         android:background="@android:color/holo_blue_dark"/>
-    </FrameLayout>
+</FrameLayout>
 ```
 
 ```java
@@ -87,21 +87,21 @@ public class MainActivity extends ActionBarActivity implements OnContextualButto
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@null"/>
+            android:background="@android:color/transparent"/>
 
         <com.akturk.contextualview.ContextualButton
             android:id="@+id/my_second_button"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@null"/>
+            android:background="@android:color/transparent"/>
 
         <com.akturk.contextualview.ContextualButton
             android:id="@+id/my_third_button"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@null"/>
+            android:background="@android:color/transparent"/>
     </com.akturk.contextualview.ContextualLayout>
 </FrameLayout>
 ```
