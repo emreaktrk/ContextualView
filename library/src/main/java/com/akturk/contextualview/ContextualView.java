@@ -19,8 +19,8 @@ public class ContextualView extends ContextualLayout {
 
     @Override
     protected void init() {
-        addButtons();
         super.init();
+        addButtons();
     }
 
     private void addButtons() {

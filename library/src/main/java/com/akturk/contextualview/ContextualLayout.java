@@ -32,7 +32,6 @@ public class ContextualLayout extends LinearLayout implements View.OnClickListen
 
     protected void init() {
         setOrientation(HORIZONTAL);
-        setListeners();
     }
 
     private void setListeners() {
@@ -54,6 +53,7 @@ public class ContextualLayout extends LinearLayout implements View.OnClickListen
     }
 
     public void setOnContextualButtonClickListener(OnContextualButtonClickListener callback) {
+        setListeners();
         mListener = callback;
     }
 
