@@ -5,7 +5,7 @@ This library is inspired from Chris Banes' Done Discard bar. It has material des
 Install
 --------------
 
-#####Gradle
+####Gradle
 ```groovy
 repositories {
     maven { url 'http://raw.github.com/emreaktrk/ContextualView/master/repository/' }
@@ -16,7 +16,7 @@ dependencies {
 }
 ```
 
-#####Maven
+####Maven
 ```xml
 <dependency>
     <groupId>com.akturk.contextualview</groupId>
