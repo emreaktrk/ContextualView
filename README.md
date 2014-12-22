@@ -19,17 +19,17 @@ dependencies {
 #####Maven
 ```xml
 <dependency>
-      <groupId>com.akturk.contextualview</groupId>
-      <artifactId>release</artifactId>
-      <version>1.1.0</version>
-      <type>aar</type>
-    </dependency>
+    <groupId>com.akturk.contextualview</groupId>
+    <artifactId>release</artifactId>
+    <version>1.1.0</version>
+    <type>aar</type>
+</dependency>
 ```
 
 Usage
 --------------
 
-#####ContextualView
+####ContextualView
 ```xml
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -80,7 +80,7 @@ public class MainActivity extends ActionBarActivity implements OnContextualButto
 }
 ```
 
-#####ContextualLayout
+####ContextualLayout
 ```xml
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
