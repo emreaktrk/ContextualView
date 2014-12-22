@@ -67,7 +67,7 @@ public class MainActivity extends ActionBarActivity implements OnContextualButto
 }
 ```
 * ContextualLayout
-* ```xml
+```xml
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -103,7 +103,6 @@ public class MainActivity extends ActionBarActivity implements OnContextualButto
             android:layout_weight="1"
             android:background="@null"/>
     </com.akturk.contextualview.ContextualLayout>
-
 </FrameLayout>
 ```
 
