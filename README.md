@@ -142,6 +142,7 @@ public class MainActivity extends ActionBarActivity implements OnContextualButto
     }
 }
 ```
+
 TODO
 --------------
 * Ripple effect
