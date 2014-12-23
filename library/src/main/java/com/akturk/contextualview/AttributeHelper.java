@@ -22,7 +22,6 @@ final class AttributeHelper {
         mBackgroundResource = typedArray.getResourceId(R.styleable.ContextualView_buttonBackground, android.R.color.transparent);
 
         typedArray.recycle();
-
     }
 
     private void setDefaultValues() {

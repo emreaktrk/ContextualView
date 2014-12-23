@@ -58,6 +58,8 @@ public class ContextualButton extends Button {
     public static class Builder {
         private Context mContext;
         private CharSequence mText;
+        private int mTextColorResource;
+        private int mBackgroundResource;
         private int mId;
 
         public Builder(Context context) {
@@ -69,6 +71,16 @@ public class ContextualButton extends Button {
             return this;
         }
 
+        public Builder setTextColor(int colorResource) {
+            mTextColorResource = colorResource;
+            return this;
+        }
+
+        public Builder setBackgroundResource(int backgroundResource) {
+            mBackgroundResource = backgroundResource;
+            return this;
+        }
+
         public Builder setId(int id) {
             mId = id;
             return this;
@@ -77,7 +89,8 @@ public class ContextualButton extends Button {
         public ContextualButton build() {
             ContextualButton contextualButton = new ContextualButton(mContext);
             contextualButton.setText(mText);
-            contextualButton.setBackgroundColor(Color.TRANSPARENT);
+            contextualButton.setTextColor(mTextColorResource);
+            contextualButton.setBackgroundResource(mBackgroundResource);
             contextualButton.setId(mId);
 
             return contextualButton;
