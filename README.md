@@ -189,3 +189,7 @@ Copyright 2014 Emre Akturk
 Author
 --------------
 [Emre Akturk](https://github.com/emreaktrk)
+
+Badge
+--------------
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-ContextualView-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/1261)
