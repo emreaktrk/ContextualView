@@ -2,13 +2,14 @@ package com.akturk.contextualview;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.util.AttributeSet;
 
 final class AttributeHelper {
     private CharSequence mPositiveText;
     private CharSequence mNegativeText;
-    private int mPositiveTextColorResource;
-    private int mNegativeTextColorResource;
+    private int mPositiveTextColor;
+    private int mNegativeTextColor;
     private int mBackgroundResource;
 
     AttributeHelper(Context context, AttributeSet attrs) {
@@ -16,9 +17,9 @@ final class AttributeHelper {
 
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.ContextualView);
         mPositiveText = typedArray.getText(R.styleable.ContextualView_positiveText);
-        mNegativeText = typedArray.getText(R.styleable.ContextualView_negativeTextColor);
-        mPositiveTextColorResource = typedArray.getResourceId(R.styleable.ContextualView_positiveTextColor, android.R.color.black);
-        mNegativeTextColorResource = typedArray.getResourceId(R.styleable.ContextualView_negativeTextColor, android.R.color.black);
+        mNegativeText = typedArray.getText(R.styleable.ContextualView_negativeText);
+        mPositiveTextColor = typedArray.getColor(R.styleable.ContextualView_positiveTextColor, Color.BLACK);
+        mNegativeTextColor = typedArray.getColor(R.styleable.ContextualView_negativeTextColor, Color.BLACK);
         mBackgroundResource = typedArray.getResourceId(R.styleable.ContextualView_buttonBackground, android.R.color.transparent);
 
         typedArray.recycle();
@@ -28,8 +29,8 @@ final class AttributeHelper {
         mPositiveText = "Positive";
         mNegativeText = "Negative";
         mBackgroundResource = android.R.color.transparent;
-        mPositiveTextColorResource = android.R.color.black;
-        mNegativeTextColorResource = android.R.color.black;
+        mPositiveTextColor = Color.BLACK;
+        mNegativeTextColor = Color.BLACK;
     }
 
     public CharSequence getPositiveText() {
@@ -40,12 +41,12 @@ final class AttributeHelper {
         return mNegativeText;
     }
 
-    public int getPositiveTextColorResource() {
-        return mPositiveTextColorResource;
+    public int getPositiveTextColor() {
+        return mPositiveTextColor;
     }
 
-    public int getNegativeTextColorResource() {
-        return mNegativeTextColorResource;
+    public int getNegativeTextColor() {
+        return mNegativeTextColor;
     }
 
     public int getBackgroundResource() {

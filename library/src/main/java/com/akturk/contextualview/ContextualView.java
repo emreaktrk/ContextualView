@@ -22,23 +22,24 @@ public class ContextualView extends ContextualLayout {
 
     private void addButtons() {
         Context context = getContext();
-        ContextualButton positiveContextualButton = new ContextualButton
-                .Builder(context)
-                .setText(mAttributeHelper.getPositiveText())
-                .setTextColor(mAttributeHelper.getPositiveTextColorResource())
-                .setBackgroundResource(mAttributeHelper.getBackgroundResource())
-                .setId(R.id.positive_contextual_button)
-                .build();
 
         ContextualButton negativeContextualButton = new ContextualButton
                 .Builder(context)
                 .setText(mAttributeHelper.getNegativeText())
-                .setTextColor(mAttributeHelper.getNegativeTextColorResource())
+                .setTextColor(mAttributeHelper.getNegativeTextColor())
                 .setBackgroundResource(mAttributeHelper.getBackgroundResource())
                 .setId(R.id.negative_contextual_button)
                 .build();
 
-        addView(positiveContextualButton);
+        ContextualButton positiveContextualButton = new ContextualButton
+                .Builder(context)
+                .setText(mAttributeHelper.getPositiveText())
+                .setTextColor(mAttributeHelper.getPositiveTextColor())
+                .setBackgroundResource(mAttributeHelper.getBackgroundResource())
+                .setId(R.id.positive_contextual_button)
+                .build();
+
         addView(negativeContextualButton);
+        addView(positiveContextualButton);
     }
 }
