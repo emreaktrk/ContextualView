@@ -4,40 +4,42 @@ import android.content.Context;
 import android.util.AttributeSet;
 
 public class ContextualView extends ContextualLayout {
-
-    public ContextualView(Context context) {
-        super(context);
-    }
+    private AttributeHelper mAttributeHelper;
 
     public ContextualView(Context context, AttributeSet attrs) {
         super(context, attrs);
+
+        mAttributeHelper = new AttributeHelper(context, attrs);
+        addButtons();
     }
 
     public ContextualView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-    }
 
-    @Override
-    protected void init() {
-        super.init();
+        mAttributeHelper = new AttributeHelper(context, attrs);
         addButtons();
     }
 
     private void addButtons() {
         Context context = getContext();
-        ContextualButton positiveContextualButton = new ContextualButton
-                .Builder(context)
-                .setText("Accept")
-                .setId(R.id.positive_contextual_button)
-                .build();
 
         ContextualButton negativeContextualButton = new ContextualButton
                 .Builder(context)
-                .setText("Decline")
+                .setText(mAttributeHelper.getNegativeText())
+                .setTextColor(mAttributeHelper.getNegativeTextColor())
+                .setBackgroundResource(mAttributeHelper.getBackgroundResource())
                 .setId(R.id.negative_contextual_button)
                 .build();
 
-        addView(positiveContextualButton);
+        ContextualButton positiveContextualButton = new ContextualButton
+                .Builder(context)
+                .setText(mAttributeHelper.getPositiveText())
+                .setTextColor(mAttributeHelper.getPositiveTextColor())
+                .setBackgroundResource(mAttributeHelper.getBackgroundResource())
+                .setId(R.id.positive_contextual_button)
+                .build();
+
         addView(negativeContextualButton);
+        addView(positiveContextualButton);
     }
 }

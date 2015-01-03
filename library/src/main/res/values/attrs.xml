@@ -3,7 +3,10 @@
         <attr name="negativeText" format="string"/>
         <attr name="positiveText" format="string"/>
 
-        <attr name="negativeTextColor" format="string"/>
-        <attr name="positiveTextColor" format="string"/>
+        <attr name="negativeTextColor" format="color"/>
+        <attr name="positiveTextColor" format="color"/>
+
+        <attr name="shouldHighlight" format="boolean"/>
+        <attr name="buttonBackground" format="color"/>
     </declare-styleable>
 </resources>
