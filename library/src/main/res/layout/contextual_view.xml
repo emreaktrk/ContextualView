@@ -1,0 +1,22 @@
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="?android:actionBarSize"
+    android:orientation="horizontal">
+
+    <com.akturk.contextualview.ContextualButton
+        android:id="@id/contextual_button_negative"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="Negative"
+        style="@style/Widget.AppCompat.ActionButton"/>
+
+    <com.akturk.contextualview.ContextualButton
+        android:id="@id/contextual_button_positive"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="Positive"
+        style="@style/Widget.AppCompat.ActionButton"/>
+</merge>

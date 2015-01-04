@@ -2,44 +2,63 @@ package com.akturk.contextualview;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.View;
+import android.widget.LinearLayout;
 
-public class ContextualView extends ContextualLayout {
-    private AttributeHelper mAttributeHelper;
+public class ContextualView extends LinearLayout implements View.OnClickListener {
+    private OnContextualClickListener mListener;
+    private ContextualButton mNegativeContextualButton;
+    private ContextualButton mPositiveContextualButton;
 
     public ContextualView(Context context, AttributeSet attrs) {
         super(context, attrs);
 
-        mAttributeHelper = new AttributeHelper(context, attrs);
-        addButtons();
+        init();
     }
 
     public ContextualView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
-        mAttributeHelper = new AttributeHelper(context, attrs);
-        addButtons();
+        init();
     }
 
-    private void addButtons() {
-        Context context = getContext();
+    private void init() {
+        inflate(getContext(), R.layout.contextual_view, this);
 
-        ContextualButton negativeContextualButton = new ContextualButton
-                .Builder(context)
-                .setText(mAttributeHelper.getNegativeText())
-                .setTextColor(mAttributeHelper.getNegativeTextColor())
-                .setBackgroundResource(mAttributeHelper.getBackgroundResource())
-                .setId(R.id.negative_contextual_button)
-                .build();
+        mNegativeContextualButton = (ContextualButton) findViewById(R.id.contextual_button_negative);
+        mNegativeContextualButton.setOnClickListener(this);
 
-        ContextualButton positiveContextualButton = new ContextualButton
-                .Builder(context)
-                .setText(mAttributeHelper.getPositiveText())
-                .setTextColor(mAttributeHelper.getPositiveTextColor())
-                .setBackgroundResource(mAttributeHelper.getBackgroundResource())
-                .setId(R.id.positive_contextual_button)
-                .build();
+        mPositiveContextualButton = (ContextualButton) findViewById(R.id.contextual_button_positive);
+        mPositiveContextualButton.setOnClickListener(this);
+    }
 
-        addView(negativeContextualButton);
-        addView(positiveContextualButton);
+    @Override
+    public void onClick(View v) {
+        if (mListener == null)
+            return;
+
+        int id = v.getId();
+        if (id == R.id.contextual_button_negative)
+            mListener.onNegativeContextualButtonClick();
+        else if (id == R.id.contextual_button_positive)
+            mListener.onPositiveContextualButtonClick();
+    }
+
+    public void setNegativeText(CharSequence text){
+        mNegativeContextualButton.setText(text);
+    }
+
+    public void setPositiveText(CharSequence text){
+        mPositiveContextualButton.setText(text);
+    }
+
+    public void setContextualClickListener(ContextualView.OnContextualClickListener listener) {
+        this.mListener = listener;
+    }
+
+    public static interface OnContextualClickListener {
+        public void onNegativeContextualButtonClick();
+
+        public void onPositiveContextualButtonClick();
     }
 }

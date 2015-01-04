@@ -1,14 +1,12 @@
 package com.akturk.sample;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 
-import com.akturk.contextualview.ContextualButton;
 import com.akturk.contextualview.ContextualView;
-import com.akturk.contextualview.OnContextualButtonClickListener;
 
 
-public class MainActivity extends Activity implements OnContextualButtonClickListener {
+public class MainActivity extends ActionBarActivity implements ContextualView.OnContextualClickListener {
     private ContextualView mContextualView;
 
     @Override
@@ -18,15 +16,21 @@ public class MainActivity extends Activity implements OnContextualButtonClickLis
     }
 
     @Override
-    public void onContentChanged() {
+    public void onSupportContentChanged() {
         super.onContentChanged();
 
         mContextualView = (ContextualView) findViewById(R.id.activity_main_contextualview);
-        mContextualView.setOnContextualButtonClickListener(this);
+        mContextualView.setContextualClickListener(this);
+    }
+
+
+    @Override
+    public void onNegativeContextualButtonClick() {
+
     }
 
     @Override
-    public void onContextualButtonClick(ContextualButton button) {
+    public void onPositiveContextualButtonClick() {
 
     }
 }
