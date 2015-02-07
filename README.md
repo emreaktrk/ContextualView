@@ -12,7 +12,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.akturk.contextualview:release:1.1.0@aar'
+    compile 'com.akturk.contextualview:release:2.0.0@aar'
 }
 ```
 
