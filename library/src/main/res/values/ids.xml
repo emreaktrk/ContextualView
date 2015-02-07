@@ -1,4 +1,4 @@
 <resources>
-    <item name="positive_contextual_button" type="id"/>
-    <item name="negative_contextual_button" type="id"/>
+    <item name="contextual_button_positive" type="id"/>
+    <item name="contextual_button_negative" type="id"/>
 </resources>

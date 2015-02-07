@@ -6,8 +6,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 public class ContextualLayout extends LinearLayout implements View.OnClickListener {
-
-    private OnContextualButtonClickListener mListener;
+    private OnContextualClickListener mListener;
 
     public ContextualLayout(Context context) {
         super(context);
@@ -30,8 +29,9 @@ public class ContextualLayout extends LinearLayout implements View.OnClickListen
             init();
     }
 
-    protected void init() {
+    private void init() {
         setOrientation(HORIZONTAL);
+        setListeners();
     }
 
     private void setListeners() {
@@ -48,13 +48,16 @@ public class ContextualLayout extends LinearLayout implements View.OnClickListen
         if (mListener == null)
             return;
 
-        ContextualButton contextualButton = (ContextualButton) v;
-        mListener.onContextualButtonClick(contextualButton);
+        int id = v.getId();
+        mListener.onContextualButtonClick(v, id);
     }
 
-    public void setOnContextualButtonClickListener(OnContextualButtonClickListener callback) {
-        setListeners();
-        mListener = callback;
+    public void setContextualClickListener(ContextualLayout.OnContextualClickListener listener) {
+        this.mListener = listener;
+    }
+
+    public static interface OnContextualClickListener {
+        public void onContextualButtonClick(View button, long id);
     }
 
 }
